@@ -239,6 +239,7 @@ class Customer implements Extractable, Hydratable
             'chats' => $this->getChatHandles()->extract(),
             'socialProfiles' => $this->getSocialProfiles()->extract(),
             'websites' => $this->getWebsites()->extract(),
+            'properties' => $this->getProperties()->extract(),
         ]);
     }
 
