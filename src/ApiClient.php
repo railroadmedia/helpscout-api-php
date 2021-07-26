@@ -10,6 +10,7 @@ use HelpScout\Api\Conversations\Threads\Attachments\AttachmentsEndpoint;
 use HelpScout\Api\Conversations\Threads\ThreadsEndpoint;
 use HelpScout\Api\Customers\CustomersEndpoint;
 use HelpScout\Api\Customers\Entry\CustomerEntryEndpoint;
+use HelpScout\Api\Customers\Entry\CustomerPropertyEndpoint;
 use HelpScout\Api\Http\Auth\CodeCredentials;
 use HelpScout\Api\Http\Authenticator;
 use HelpScout\Api\Http\RestClient;
@@ -35,6 +36,7 @@ class ApiClient
         'hs.mailboxes' => MailboxesEndpoint::class,
         'hs.customers' => CustomersEndpoint::class,
         'hs.customerEntry' => CustomerEntryEndpoint::class,
+        'hs.customerProperty' => CustomerPropertyEndpoint::class,
         'hs.conversations' => ConversationsEndpoint::class,
         'hs.attachments' => AttachmentsEndpoint::class,
         'hs.teams' => TeamsEndpoint::class,
@@ -191,6 +193,11 @@ class ApiClient
     public function customerEntry(): CustomerEntryEndpoint
     {
         return $this->fetchFromContainer('hs.customerEntry');
+    }
+
+    public function customerProperty(): CustomerPropertyEndpoint
+    {
+        return $this->fetchFromContainer('hs.customerProperty');
     }
 
     public function conversations(): ConversationsEndpoint
