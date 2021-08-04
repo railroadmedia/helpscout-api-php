@@ -18,6 +18,7 @@ use HelpScout\Api\Http\Auth\NullCredentials;
 use HelpScout\Api\Http\Auth\RefreshCredentials;
 use HelpScout\Api\Http\Handlers\AuthenticationHandler;
 use HelpScout\Api\Http\Handlers\ClientErrorHandler;
+use HelpScout\Api\Http\Handlers\ConflictHandler;
 use HelpScout\Api\Http\Handlers\RateLimitHandler;
 use HelpScout\Api\Http\Handlers\ValidationHandler;
 
@@ -104,6 +105,7 @@ class RestClientBuilder
 
         $handler->push(new AuthenticationHandler());
         $handler->push(new ClientErrorHandler());
+        $handler->push(new ConflictHandler());
         $handler->push(new RateLimitHandler());
         $handler->push(new ValidationHandler());
         $handler->push(Middleware::retry($this->getRetryDecider()));
