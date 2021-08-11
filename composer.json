@@ -1,7 +1,7 @@
 {
-    "name": "helpscout/api",
+    "name": "railroadmedia/helpscout-api-php",
     "type": "library",
-    "description": "Help Scout API v2 Client",
+    "description": "Help Scout API v2 Client - musora media fork",
     "homepage": "https://github.com/helpscout/helpscout-api-php",
     "keywords": ["helpscout", "help desk", "support", "api"],
     "license": "MIT",
